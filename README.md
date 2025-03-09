@@ -14,7 +14,7 @@
 ### Установка.
 Клонируйте репозиторий:
 ```
-git clone git@github.com:HepoH4uk/Kursovaya.git
+git clone https://github.com/HepoH4uk/homework_14.git
 ```
 Установите зависимости
 ```
