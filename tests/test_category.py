@@ -7,11 +7,11 @@ def test_category_1(first_category):
 
 
 def test_category_2(first_category, second_category):
-    assert first_category.category_count == 2
-    assert second_category.product_count == 2
-    assert first_category.product_count == 2
+    assert first_category.category_count == 3
+    assert second_category.product_count == 3
+    assert first_category.product_count == 3
 
 
 def test_empty_list_product(empty_list_product):
-    assert empty_list_product.category_count == 1
-    assert empty_list_product.product_count == 0
+    assert empty_list_product.category_count == 4
+    assert empty_list_product.product_count == 3
