@@ -12,10 +12,7 @@ class Product:
 
     @classmethod
     def new_product(cls, prod_data):
-        return cls(name=prod_data.get("name"),
-                   description=prod_data.get("description"),
-                   price=prod_data.get("price"),
-                   quantity=prod_data.get("quantity"))
+        return cls(**prod_data)
 
     @property
     def price(self):
