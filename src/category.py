@@ -23,15 +23,11 @@ class Category:
                             + product.description + ","
                             + str(product.price) + ","
                             + str(product.quantity))
-        return products
+        for product in self.__products:
+            return f"{product.name}, {product.price}, Остаток: {product.quantity} шт."
 
-    @products.setter
-    def products(self, new_product):
-        self.__products = new_product
-        return new_product
-
-    def add_product(self, products_list: Product):
-        self.__products.append(products_list)
+    def add_product(self, product: Product):
+        self.__products.append(product)
         Category.product_count += 1
 
 
