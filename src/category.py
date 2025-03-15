@@ -17,14 +17,10 @@ class Category:
 
     @property
     def products(self):
-        products = []
+        products_info = []
         for product in self.__products:
-            products.append(product.name + ","
-                            + product.description + ","
-                            + str(product.price) + ","
-                            + str(product.quantity))
-        for product in self.__products:
-            return f"{product.name}, {product.price}, Остаток: {product.quantity} шт."
+            products_info.append(f"{product.name}, {product.price}, Остаток: {product.quantity} шт.")
+        return '\n'.join(products_info)
 
     def add_product(self, product: Product):
         self.__products.append(product)
