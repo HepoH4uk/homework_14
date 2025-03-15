@@ -29,5 +29,4 @@ def test_products_list(first_category, second_category):
 def test_add_new_product(first_category):
     product = Product("55\" QLED 4K", "Фоновая подсветка", 123000.0, 7)
     first_category.add_product(product)
-    assert first_category.products == 'Iphone 15, 210000.0, Остаток: 8 шт.', \
-                                      '55" QLED 4K, 123000.0, Остаток: 7 шт.'
+    assert first_category.products == 'Iphone 15, 210000.0, Остаток: 8 шт.\n55" QLED 4K, 123000.0, Остаток: 7 шт.'
