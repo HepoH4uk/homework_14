@@ -29,3 +29,11 @@ def test_new_product():
     assert new_product.description == "256GB, Серый цвет, 200MP камера"
     assert new_product.price == 180000.0
     assert new_product.quantity == 5
+
+
+def test_product_str(first_product):
+    assert str(first_product) == "Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт."
+
+
+def test_product_add(first_product, second_product):
+    assert first_product+second_product == 1334000.0
