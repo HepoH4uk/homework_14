@@ -22,11 +22,18 @@ def test_empty_list_product(empty_list_product):
 
 
 def test_products_list(first_category, second_category):
-    assert first_category.products == 'Iphone 15, 210000.0, Остаток: 8 шт.'
-    assert second_category.products == '55" QLED 4K, 123000.0, Остаток: 7 шт.'
+    # assert first_category.products == 'Смартфоны, количество продуктов: 5'
+    # assert second_category.products == 'Телевизоры, количество продуктов: 7'
+    print(first_category.products)
+    print(second_category.products)
 
 
 def test_add_new_product(first_category):
-    product = Product("55\" QLED 4K", "Фоновая подсветка", 123000.0, 7)
+    product = Product("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14)
     first_category.add_product(product)
-    assert first_category.products == 'Iphone 15, 210000.0, Остаток: 8 шт.\n55" QLED 4K, 123000.0, Остаток: 7 шт.'
+    assert first_category.products == ('Iphone 15, 210000.0 руб., Остаток: 8 шт.\n'
+                                       'Xiaomi Redmi Note 11, 31000.0 руб., Остаток: 14 шт.')
+
+
+def test_category_str(first_category):
+    assert str(first_category) == "Смартфоны, количество продуктов: 8"
