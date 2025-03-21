@@ -66,5 +66,10 @@ def test_smartphone_add(first_smartphone, second_smartphone):
     assert first_smartphone+second_smartphone == 2580000.0
 
 
+def test_smartphone_wrong_add(first_smartphone, first_grass):
+    with pytest.raises(TypeError):
+        result = first_smartphone + 1
+
+
 def test_grass_add(first_grass, second_grass):
     assert first_grass + second_grass == 16750.0
