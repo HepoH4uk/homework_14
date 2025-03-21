@@ -15,7 +15,7 @@ class Product:
 
     def __add__(self, other):
         if type(other) is Product:
-            return self.__price * self.quantity + other.__price * other.quantity
+            return self.__price * self.quantity + other.price * other.quantity
         raise TypeError
 
     @classmethod
@@ -48,6 +48,7 @@ class Smartphone(Product):
             return self.price * self.quantity + other.price * other.quantity
         raise TypeError
 
+
 class LawnGrass(Product):
     def __init__(self, name, description, price, quantity,
                  country, germination_period, color):
@@ -60,4 +61,3 @@ class LawnGrass(Product):
         if type(other) is LawnGrass:
             return self.price * self.quantity + other.price * other.quantity
         raise TypeError
-
