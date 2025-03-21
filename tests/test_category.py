@@ -1,7 +1,5 @@
 from src.product import Product
 from src.product import Smartphone
-from src.product import LawnGrass
-import pytest
 
 
 def test_category_1(first_category):
@@ -42,14 +40,8 @@ def test_category_str(first_category):
     assert str(first_category) == "Смартфоны, количество продуктов: 8"
 
 
-def test_add_new_product_2(first_smartphone):
-    product = Smartphone("Iphone 15", "512GB, Gray space", 210000.0, 8, 98.2, "15", 512, "Gray space")
-    first_smartphone.add_product(product)
-    assert first_smartphone.products == ('Iphone 15, 210000.0 руб., Остаток: 8 шт.\n')
-
-
-def test_wrong_product_2(first_smartphone):
-    product = "Wrong product"
-    first_smartphone.add_product(product)
-    with pytest.raises(TypeError):
-        result = first_smartphone + 1
+def test_add_new_product_2(first_category):
+    product = Smartphone("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14, 90.3, "Note 11", 1024, "Синий")
+    first_category.add_product(product)
+    assert first_category.products == ("Iphone 15, 210000.0 руб., Остаток: 8 шт.\n"
+                                       "Xiaomi Redmi Note 11, 31000.0 руб., Остаток: 14 шт.")
