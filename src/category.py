@@ -1,11 +1,10 @@
 from src.product import Product
-from src.product import Smartphone
 
 
 class Category:
     name: str
     description: str
-    products: list
+    __products: list
     category_count = 0
     product_count = 0
 
