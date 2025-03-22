@@ -3,7 +3,7 @@ import pytest
 from src.product import Product
 
 
-def test_products_1(first_product):
+def test_products(first_product):
     assert first_product.name == "Samsung Galaxy S23 Ultra"
     assert first_product.description == "256GB, Серый цвет, 200MP камера"
     assert first_product.price == 180000.0
