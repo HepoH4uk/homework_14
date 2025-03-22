@@ -4,7 +4,7 @@ from src.product import Product
 class Category:
     name: str
     description: str
-    products: list
+    __products: list
     category_count = 0
     product_count = 0
 
@@ -30,5 +30,8 @@ class Category:
         return '\n'.join(products_info)
 
     def add_product(self, product: Product):
-        self.__products.append(product)
-        Category.product_count += 1
+        if isinstance(product, Product):
+            self.__products.append(product)
+            Category.product_count += 1
+        else:
+            raise TypeError
