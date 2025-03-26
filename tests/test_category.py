@@ -45,3 +45,17 @@ def test_add_new_product_2(first_category):
     first_category.add_product(product)
     assert first_category.products == ("Iphone 15, 210000.0 руб., Остаток: 8 шт.\n"
                                        "Xiaomi Redmi Note 11, 31000.0 руб., Остаток: 14 шт.")
+
+
+def test_middle_price_1(first_category):
+    product = Product("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14)
+    first_category.add_product(product)
+    assert first_category.middle_price() == 120500.0
+
+
+def test_middle_price_2(zero_price_category):
+    assert zero_price_category.middle_price() == 0
+
+
+def test_zero_products(zero_products_category):
+    assert zero_products_category.middle_price() == 0
