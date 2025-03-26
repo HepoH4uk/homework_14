@@ -5,14 +5,17 @@ from src.print_mixin import PrintMixin
 class Product(BaseProduct, PrintMixin):
     name: str
     description: str
-    price: float
+    __price: float
     quantity: int
 
     def __init__(self, name, description, price, quantity):
         self.name = name
         self.description = description
-        self.price = price
-        self.quantity = quantity
+        self.__price = price
+        if quantity > 0:
+            self.quantity = quantity
+        else:
+            raise ValueError("Товар с нулевым количеством не может быть добавлен")
         super().__init__()
 
     def __str__(self):
